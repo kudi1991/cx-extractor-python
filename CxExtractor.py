@@ -95,8 +95,8 @@ class CxExtractor:
         response.encoding = encode_info['encoding']
         return response.text
 
-    def readHtml(self, path, coding):
-        page = open(path, encoding=coding)
+    def readHtml(self, path):
+        page = open(path)
         lines = page.readlines()
         s = ''
         for line in lines:
