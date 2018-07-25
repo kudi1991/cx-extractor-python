@@ -1,7 +1,11 @@
+# -*- coding: utf8 -*-
+
 import re
 import chardet
-
 import requests
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 
 class CxExtractor:
@@ -23,7 +27,7 @@ class CxExtractor:
         for i in range(len(lines)):
             if lines[i] == ' ' or lines[i] == '\n':
                 lines[i] = ''
-        self.__indexDistribution.clear()
+        self.__indexDistribution = []
         for i in range(0, len(lines) - self.__blocksWidth):
             wordsNum = 0
             for j in range(i, i + self.__blocksWidth):
